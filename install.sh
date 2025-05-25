@@ -1,13 +1,11 @@
 #!/bin/bash
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-# azhuzhu-zsh-theme installation script
-
-echo "Starting installation of azhuzhu-zsh-theme..."
+echo "Starting installation of theme..."
 
 # Define the theme source path
-THEME_SOURCE="$DIR/themes/azhuzhu.zsh-theme"
-
+THEME_SOURCE="https://raw.githubusercontent.com/Roland0511/azhuzhu-zsh-theme/main/themes/azhuzhu.zsh-theme"
+# Get the theme file name from the source URL
+THEME_NAME="$(basename "$THEME_SOURCE")"
 # Define the destination path for the theme
 DESTINATION="$HOME/.oh-my-zsh/custom/themes/"
 
@@ -17,9 +15,13 @@ if [ ! -d "$DESTINATION" ]; then
     mkdir -p "$DESTINATION"
 fi
 
-# Copy the theme files to the destination
-echo "Copying theme files..."
-cp "$THEME_SOURCE" "$DESTINATION"
+# Download the theme files to the destination
+echo "Downloading theme files..."
+curl -sSL "$THEME_SOURCE" -o "$DESTINATION/$THEME_NAME"
+if [ $? -ne 0 ]; then
+    echo "Error downloading the theme. Please check your internet connection or the URL."
+    exit 1
+fi
 
 # Update .zshrc to set the theme
 if grep -q "ZSH_THEME=\"azhuzhu\"" "$HOME/.zshrc"; then
