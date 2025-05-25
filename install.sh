@@ -18,7 +18,7 @@ fi
 
 # Copy the theme files to the destination
 echo "Copying theme files..."
-cp "$THEME_SOURCE"/* "$DESTINATION"
+cp "$THEME_SOURCE" "$DESTINATION"
 
 # Update .zshrc to set the theme
 if grep -q "ZSH_THEME=\"azhuzhu\"" "$HOME/.zshrc"; then
