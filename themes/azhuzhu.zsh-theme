@@ -16,14 +16,14 @@ show_username() {
 # Set the prompt
 PROMPT='%B'
 PROMPT+='%F{blue}$(virtualenv_prompt_info)%F{magenta}$(conda_prompt_info)'
-PROMPT+='%(?:%F{green}➜ :%F{red}➜ )$(show_username)%F{cyan}%c%f'
+PROMPT+='%(?:%F{green}➜ :%F{red}➜ )$(show_username)%F{cyan}%c%f%b'
 PROMPT+=' $(git_prompt_info)'
 # Set the right prompt
 # RPROMPT='%B%F{magenta}[%D{%H:%M:%S}]%f'
 
 # Customize the appearance
 ZSH_THEME_GIT_PROMPT_PREFIX="%B%F{blue}git:(%F{red}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%f "
+ZSH_THEME_GIT_PROMPT_SUFFIX="%b%f "
 ZSH_THEME_GIT_PROMPT_DIRTY="%F{blue}) %F{yellow}✗%f"
 ZSH_THEME_GIT_PROMPT_CLEAN="%F{blue})%f"
 
