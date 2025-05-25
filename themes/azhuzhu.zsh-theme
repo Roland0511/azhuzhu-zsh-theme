@@ -4,18 +4,28 @@
 
 # Theme Configuration
 # This is the main source file for the azhuzhu Zsh theme.
+# Function to show username conditionally
+SHOW_USERNAME=false
+
+show_username() {
+    if [[ ${SHOW_USERNAME:-true} == "true" ]]; then
+        echo "%(!.%F{red}%n.%F{blue}%n) "
+    fi
+}
 
 # Set the prompt
-PROMPT='%F{cyan}%n@%m %F{yellow}%~ %F{green}➜ %f'
-
-# Set the command prompt
-RPROMPT='%F{magenta}[%D{%L:%M:%S}]%f'
+PROMPT='%B'
+PROMPT+='%F{blue}$(virtualenv_prompt_info)%F{magenta}$(conda_prompt_info)'
+PROMPT+='%(?:%F{green}➜ :%F{red}➜ )$(show_username)%F{cyan}%c%f'
+PROMPT+=' $(git_prompt_info)'
+# Set the right prompt
+# RPROMPT='%B%F{magenta}[%D{%H:%M:%S}]%f'
 
 # Customize the appearance
-ZSH_THEME_GIT_PROMPT_PREFIX="%F{red}git:(%F{green}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%F{red})%f"
-ZSH_THEME_GIT_PROMPT_DIRTY="%F{yellow}*%f"
-ZSH_THEME_GIT_PROMPT_CLEAN="%F{green}✓%f"
+ZSH_THEME_GIT_PROMPT_PREFIX="%B%F{blue}git:(%F{red}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%f "
+ZSH_THEME_GIT_PROMPT_DIRTY="%F{blue}) %F{yellow}✗%f"
+ZSH_THEME_GIT_PROMPT_CLEAN="%F{blue})%f"
 
 # Load additional configurations if needed
 # source $HOME/.zsh_custom_config
