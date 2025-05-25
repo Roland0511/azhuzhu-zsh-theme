@@ -26,7 +26,7 @@ fi
 # Update .zshrc to set the theme
 echo "Setting the theme in .zshrc..."
 if grep -q 'ZSH_THEME=' "$HOME/.zshrc"; then
-    sed -i 's/^ZSH_THEME=.*/ZSH_THEME="azhuzhu"/' "$HOME/.zshrc"
+    sed -i '' 's/^ZSH_THEME=.*/ZSH_THEME="azhuzhu"/' "$HOME/.zshrc"
 else
     echo 'ZSH_THEME="azhuzhu"' >> "$HOME/.zshrc"
 fi
