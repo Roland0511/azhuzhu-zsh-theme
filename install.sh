@@ -1,11 +1,12 @@
 #!/bin/bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # azhuzhu-zsh-theme installation script
 
 echo "Starting installation of azhuzhu-zsh-theme..."
 
 # Define the theme source path
-THEME_SOURCE="themes/azhuzhu.zsh-theme"
+THEME_SOURCE="$DIR/themes/azhuzhu.zsh-theme"
 
 # Define the destination path for the theme
 DESTINATION="$HOME/.oh-my-zsh/custom/themes/"
