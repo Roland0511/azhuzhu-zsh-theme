@@ -7,8 +7,7 @@ A customizable Zsh theme for enhanced terminal experience based on [Oh My Zsh](h
 ## Installation
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Roland0511/azhuzhu-zsh-theme/main/install.sh)"
-source ~/.zshrc
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Roland0511/azhuzhu-zsh-theme/main/install.sh)" && source ~/.zshrc
 ```
 
 ## Uninstall
@@ -16,7 +15,7 @@ source ~/.zshrc
 To uninstall the theme, you can use the uninstall script:
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Roland0511/azhuzhu-zsh-theme/main/uninstall.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Roland0511/azhuzhu-zsh-theme/main/uninstall.sh)" && source ~/.zshrc
 source ~/.zshrc
 ```
 
