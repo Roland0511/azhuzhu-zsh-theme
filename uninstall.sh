@@ -5,7 +5,7 @@
 # Function to remove the theme files
 uninstall_theme() {
     echo "Removing azhuzhu-zsh-theme..."
-    rm -rf ~/.oh-my-zsh/themes/azhuzhu.zsh-theme
+    rm -rf ~/.oh-my-zsh/custom/themes/azhuzhu.zsh-theme
     echo "Theme removed successfully."
 }
 
