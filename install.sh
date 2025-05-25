@@ -8,7 +8,7 @@ echo "Starting installation of azhuzhu-zsh-theme..."
 THEME_SOURCE="themes/azhuzhu.zsh-theme"
 
 # Define the destination path for the theme
-DESTINATION="$HOME/.oh-my-zsh/custom/themes/azhuzhu.zsh-theme"
+DESTINATION="$HOME/.oh-my-zsh/custom/themes/"
 
 # Check if the destination directory exists
 if [ ! -d "$DESTINATION" ]; then
