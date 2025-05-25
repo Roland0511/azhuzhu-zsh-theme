@@ -24,11 +24,12 @@ if [ $? -ne 0 ]; then
 fi
 
 # Update .zshrc to set the theme
-if grep -q "ZSH_THEME=\"azhuzhu\"" "$HOME/.zshrc"; then
-    echo "Theme is already set in .zshrc."
+echo "Setting the theme in .zshrc..."
+if grep -q 'ZSH_THEME=' "$HOME/.zshrc"; then
+    sed -i 's/^ZSH_THEME=.*/ZSH_THEME="azhuzhu"/' "$HOME/.zshrc"
 else
-    echo "Setting the theme in .zshrc..."
     echo 'ZSH_THEME="azhuzhu"' >> "$HOME/.zshrc"
 fi
+
 
 echo "Installation completed! Please restart your terminal or run 'source ~/.zshrc' to apply the changes."
