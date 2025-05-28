@@ -15,7 +15,7 @@ show_username() {
 
 # Set the prompt
 PROMPT='%B'
-PROMPT+='%F{blue}$(virtualenv_prompt_info)%F{magenta}$(conda_prompt_info)'
+PROMPT+='%F{magenta}$(conda_prompt_info)%F{blue}$(virtualenv_prompt_info)'
 PROMPT+='%(?:%F{green}➜ :%F{red}➜ )$(show_username)%F{cyan}%c%f%b'
 PROMPT+=' $(git_prompt_info)'
 # Set the right prompt
